@@ -1,0 +1,31 @@
+{% extends "todo/base.html" %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="">
+
+{% endblock  %}
+
+{% block content %}
+<table class="">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Family member</th>
+            <th scope="col">Task</th>
+            <th scope="col">Date done</th>
+
+        </tr>
+    </thead>
+        <tbody>
+            {% for workdone in Workdone %}
+            <tr>
+                <td scope="row">{{forloop.counter}}</td>
+                <td>{{workdone.family_member}}</td>
+                <td>{{workdone.task}}</td>
+                <td>{{workdone.date_done}}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+{% endblock  %}
